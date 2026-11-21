@@ -1,0 +1,718 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarbonLens â€” Small actions, big impact.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css?v=2.1">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* Nature-Inspired Landing Page Aesthetics */
+    .landing-body {
+      background-color: #f7f9f4;
+      overflow-x: hidden;
+    }
+
+    .landing-wrapper {
+      max-width: 1280px;
+      margin: 20px auto 40px;
+      padding: 0 24px;
+    }
+
+    /* Main Hero Frame (Matching Screenshot) */
+    .hero-card-frame {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-floating);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      position: relative;
+      min-height: 740px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Floating Navigation */
+    .hero-nav {
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 20;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-leaf-icon {
+      width: 36px;
+      height: 36px;
+      background: #eaf5ee;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #2d6a4f;
+    }
+
+    .brand-text {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .hero-nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .hero-nav-menu a {
+      color: var(--text-muted);
+      font-size: 14.5px;
+      font-weight: 600;
+      transition: color var(--transition-fast);
+      position: relative;
+    }
+
+    .hero-nav-menu a.active {
+      color: var(--text-main);
+    }
+
+    .hero-nav-menu a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--text-main);
+      border-radius: 2px;
+    }
+
+    .hero-nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .btn-get-app {
+      background-color: #1f3d2d;
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(31, 61, 45, 0.25);
+    }
+
+    .btn-get-app:hover {
+      background-color: #12281d;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .app-check-disc {
+      width: 18px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    /* Hero Main Content & Landscape */
+    .hero-main-layout {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      padding: 40px 48px 0;
+      position: relative;
+      min-height: 600px;
+    }
+
+    .hero-left-content {
+      position: relative;
+      z-index: 10;
+      max-width: 540px;
+      padding-top: 20px;
+    }
+
+    .hero-big-title {
+      font-family: var(--font-display);
+      font-size: 3.75rem;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: #192a20;
+      margin-bottom: 20px;
+    }
+
+    .hero-big-title span {
+      color: #52b788;
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: #5e7264;
+      line-height: 1.6;
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    .hero-action-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .btn-start-journey {
+      background-color: #1f3d2d;
+      color: #ffffff;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(31, 61, 45, 0.25);
+    }
+
+    .btn-start-journey:hover {
+      background-color: #12281d;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-watch-video {
+      background-color: #ffffff;
+      color: #192a20;
+      border: 1px solid var(--border-color);
+      padding: 13px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-watch-video:hover {
+      background-color: #f7f9f4;
+    }
+
+    /* Right Landscape Background Vector (Serene Mountain & Lake) */
+    .hero-landscape-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 60%;
+      background: linear-gradient(180deg, #f7f9f4 0%, #edf2e9 100%);
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .landscape-svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Floating Metrics Widget (Positioned seamlessly in hero) */
+    .hero-floating-metrics {
+      position: relative;
+      z-index: 15;
+      margin: 20px 0 36px;
+      max-width: 580px;
+    }
+
+    /* Left Floating Achievement Pill (Absolute or Relative in Flow) */
+    .hero-achievement-badge-container {
+      margin-bottom: 24px;
+    }
+
+    .hero-achievement-badge {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-pill);
+      padding: 10px 18px 10px 12px;
+      box-shadow: var(--shadow-floating);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Floating Impact Curve Widget */
+    .impact-curve-box {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-floating);
+      max-width: 260px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .impact-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .impact-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .impact-period {
+      font-size: 10.5px;
+      color: var(--text-muted);
+    }
+
+    /* As Featured In Press Section */
+    .press-section {
+      padding: 36px 48px;
+      border-top: 1px solid var(--border-subtle);
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .press-label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+    }
+
+    .press-logos-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .press-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: #9cb0a2;
+      letter-spacing: -0.5px;
+    }
+
+    /* Feature Pillars Section */
+    .section-container {
+      max-width: 1280px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 48px;
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #eaf5ee;
+      color: #2d6a4f;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 12.5px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .feature-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-card);
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-floating);
+      border-color: var(--primary-leaf);
+    }
+
+    .pillar-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .pillar-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    .landing-footer {
+      background-color: #172d21;
+      color: #d1e7dd;
+      border-radius: var(--radius-xl);
+      padding: 60px 48px 30px;
+      margin-top: 80px;
+    }
+
+    .footer-content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-size: 14px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      color: #9cb8a6;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover {
+      color: #74c69d;
+    }
+
+    @media (max-width: 990px) {
+      .hero-main-layout {
+        grid-template-columns: 1fr;
+        padding: 30px 24px 0;
+      }
+      .hero-landscape-bg {
+        display: none;
+      }
+      .hero-big-title {
+        font-size: 2.75rem;
+      }
+      .feature-pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-content-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .hero-nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body class="landing-body">
+
+  <div class="landing-wrapper">
+    <!-- Hero Card Frame -->
+    <div class="hero-card-frame">
+      <!-- Top Navigation -->
+      <nav class="hero-nav">
+        <a href="index.html" class="hero-brand">
+          <div class="brand-leaf-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2d6a4f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+          <div class="brand-text">Carbon<span>Lens</span></div>
+        </a>
+
+        <ul class="hero-nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="dashboard.html">Explore</a></li>
+          <li><a href="leaderboard.html">Community</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+          <a href="dashboard.html" class="btn-get-app">
+            <span>Get the App</span>
+            <span class="app-check-disc">âœ“</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Main Hero Layout -->
+      <div class="hero-main-layout">
+        <!-- Left Column -->
+        <div class="hero-left-content">
+          <h1 class="hero-big-title">
+            Small actions,
+            <span>big impact.</span>
+          </h1>
+          <p class="hero-desc">
+            CarbonLens helps you build sustainable habits, track your impact and grow a greener tomorrow.
+          </p>
+
+          <div class="hero-action-row">
+            <a href="dashboard.html" class="btn-start-journey">
+              <span>Start Your Journey</span>
+              <span class="app-check-disc">ðŸŒ¿</span>
+            </a>
+            <a href="simulator.html" class="btn-watch-video">
+              <span>â–¶ What-If Lab</span>
+            </a>
+          </div>
+
+          <!-- Floating Achievement Badge (Left) -->
+          <div class="hero-achievement-badge-container">
+            <div class="hero-achievement-badge">
+              <div class="achievement-icon-disc">ðŸŒ±</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">New achievement</div>
+                <div style="font-size: 12px; color: var(--text-muted);">You just logged your first eco trip! ðŸŒ¿</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating 3-Metric Banner (Leafy Style) -->
+          <div class="hero-floating-metrics">
+            <div class="floating-metrics-banner">
+              <!-- Metric 1 -->
+              <div class="floating-metric-col">
+                <div class="metric-icon-disc disc-leaf">ðŸƒ</div>
+                <div class="floating-metric-num">12.4k</div>
+                <div class="floating-metric-label">Trees Equivalent</div>
+                <div class="floating-metric-sub">+2.6k this month</div>
+              </div>
+
+              <!-- Metric 2 -->
+              <div class="floating-metric-col">
+                <div class="metric-icon-disc disc-water">ðŸ’§</div>
+                <div class="floating-metric-num">8.7k</div>
+                <div class="floating-metric-label">Kg of COâ‚‚ Saved</div>
+                <div class="floating-metric-sub">+1.3k this month</div>
+              </div>
+
+              <!-- Metric 3 -->
+              <div class="floating-metric-col">
+                <div class="metric-icon-disc disc-spark">âš¡</div>
+                <div class="floating-metric-num">3.1k</div>
+                <div class="floating-metric-label">People Inspired</div>
+                <div class="floating-metric-sub">+680 this month</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Sparkline Impact Card -->
+          <div class="impact-curve-box">
+            <div class="impact-header-row">
+              <span class="impact-title">Your Impact Over Time</span>
+              <span class="impact-period">This Month</span>
+            </div>
+            <div style="position: relative; height: 50px; display: flex; align-items: flex-end;">
+              <!-- SVG Smooth Curve -->
+              <svg viewBox="0 0 200 60" style="width: 100%; height: 100%; overflow: visible;">
+                <path d="M 0 50 Q 50 48, 90 35 T 150 15 T 200 8" fill="none" stroke="#52b788" stroke-width="3" stroke-linecap="round" />
+                <circle cx="150" cy="15" r="4" fill="#2d6a4f" />
+              </svg>
+              <div style="position: absolute; top: -6px; right: 35px; background: #172d21; color: #ffffff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: var(--radius-pill);">
+                720 kg
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Serene Landscape Illustration (Nature & Mountains) -->
+        <div class="hero-landscape-bg">
+          <svg class="landscape-svg" viewBox="0 0 700 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Sun -->
+            <circle cx="580" cy="160" r="60" fill="#fef3c7" opacity="0.8" />
+            <circle cx="580" cy="160" r="85" fill="#fef3c7" opacity="0.3" />
+            
+            <!-- Birds in Sky -->
+            <path d="M 460 140 Q 470 130, 480 140 Q 490 130, 500 140" stroke="#4a6052" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            <path d="M 510 180 Q 518 172, 526 180 Q 534 172, 542 180" stroke="#4a6052" stroke-width="2" fill="none" stroke-linecap="round" />
+            <path d="M 530 200 Q 536 194, 542 200 Q 548 194, 554 200" stroke="#4a6052" stroke-width="1.8" fill="none" stroke-linecap="round" />
+
+            <!-- Distant Misty Mountains -->
+            <path d="M 220 500 L 440 220 L 660 500 Z" fill="#ccd9c8" opacity="0.6" />
+            <path d="M 380 500 L 560 260 L 740 500 Z" fill="#b8ccb3" opacity="0.7" />
+            
+            <!-- Midground Mountains -->
+            <path d="M 180 600 L 380 290 L 580 600 Z" fill="#9db898" />
+            <path d="M 320 600 L 520 340 L 720 600 Z" fill="#88a883" />
+
+            <!-- Soft Lake / Water Horizon -->
+            <path d="M 0 540 Q 350 510, 700 530 L 700 700 L 0 700 Z" fill="#a4c6b8" opacity="0.45" />
+
+            <!-- Foreground Green Hills & Fir Trees -->
+            <path d="M 280 700 Q 480 480, 700 520 L 700 700 Z" fill="#386b52" />
+            
+            <!-- Fir Trees (Stylized) -->
+            <!-- Tree 1 -->
+            <polygon points="620,440 605,470 635,470" fill="#1b4332" />
+            <polygon points="620,460 600,495 640,495" fill="#1b4332" />
+            <polygon points="620,485 595,530 645,530" fill="#1b4332" />
+
+            <!-- Tree 2 -->
+            <polygon points="660,420 645,450 675,450" fill="#17382a" />
+            <polygon points="660,440 640,475 680,475" fill="#17382a" />
+            <polygon points="660,465 635,510 685,510" fill="#17382a" />
+
+            <!-- Tree 3 (Front Large) -->
+            <polygon points="650,480 630,520 670,520" fill="#122a1f" />
+            <polygon points="650,510 620,560 680,560" fill="#122a1f" />
+            <polygon points="650,545 610,610 690,610" fill="#122a1f" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Press Banner -->
+      <section class="press-section">
+        <span class="press-label">As featured in</span>
+        <div class="press-logos-row">
+          <span class="press-logo" style="font-family: serif; font-size: 22px;">Forbes</span>
+          <span class="press-logo" style="font-weight: 800; letter-spacing: -1px;">stam</span>
+          <span class="press-logo" style="font-family: serif; font-weight: 700;">The Guardian</span>
+          <span class="press-logo" style="font-weight: 800; text-transform: uppercase;">FASTCOMPANY</span>
+          <span class="press-logo" style="font-weight: 700;">Treehugger</span>
+        </div>
+      </section>
+    </div>
+
+    <!-- Feature Pillars Section -->
+    <section class="section-container" id="features">
+      <div class="section-header">
+        <div class="section-badge">âœ¨ Core Capabilities</div>
+        <h2 style="font-size: 2rem; margin-bottom: 12px;">Grow Your Sustainable Habits</h2>
+        <p>A closed-loop platform designed for individuals and teams striving for net-zero living.</p>
+      </div>
+
+      <div class="feature-pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: #eaf5ee; color: #2d6a4f;">ðŸ“Š</div>
+          <h3 class="pillar-title">Precision Carbon Accounting</h3>
+          <p class="pillar-desc">Log transportation, home electricity, heating gas, diet, and consumer purchases with snapshot EPA and DEFRA conversion models.</p>
+          <a href="activities.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">Track Activities â†’</a>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: #fef6ec; color: #e76f51;">ðŸŽ¯</div>
+          <h3 class="pillar-title">Monthly Carbon Budgets</h3>
+          <p class="pillar-desc">Set personalized monthly carbon allowances with non-shaming budget pacing and early warning indicators.</p>
+          <a href="goals.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">Set Goals â†’</a>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box" style="background: #e8f2fa; color: #3d7ab8;">ðŸ§ª</div>
+          <h3 class="pillar-title">"What-If" Scenario Simulator</h3>
+          <p class="pillar-desc">Simulate the exact environmental savings of cutting solo driving, adopting meatless days, or lowering thermostat setpoints.</p>
+          <a href="simulator.html" class="btn btn-secondary btn-sm" style="align-self: flex-start;">Run Simulations â†’</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer" id="about">
+      <div class="footer-content-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+            <div class="brand-leaf-icon" style="background: rgba(255,255,255,0.15);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6ee7b7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+            <div class="brand-text" style="color: #ffffff;">Carbon<span style="color: #6ee7b7;">Lens</span></div>
+          </div>
+          <p style="font-size: 14px; color: #a4c0af; max-width: 340px; line-height: 1.6;">
+            Empowering individuals to understand their environmental impact and build lasting sustainability habits.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="dashboard.html">Analytics Dashboard</a></li>
+            <li><a href="activities.html">Activity Journal</a></li>
+            <li><a href="goals.html">Carbon Goals</a></li>
+            <li><a href="simulator.html">What-If Lab</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="leaderboard.html">Community Leaderboard</a></li>
+            <li><a href="achievements.html">Milestones & Badges</a></li>
+            <li><a href="/docs" target="_blank">Swagger API Docs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="register.html">Get Started Free</a></li>
+            <li><a href="profile.html">Data Sovereignty</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; font-size: 13px; color: #7d9e8a; flex-wrap: wrap; gap: 12px;">
+        <div>Â© 2026 CarbonLens Technologies. Built with Python & FastAPI.</div>
+        <div>Calculations are verified estimates based on EPA, DEFRA, and IPCC emission conversion standards.</div>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
+
+
+

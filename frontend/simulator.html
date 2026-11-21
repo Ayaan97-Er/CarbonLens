@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"What If?" Simulation Laboratory — CarbonLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css?v=2.1">
+  <link rel="stylesheet" href="css/dashboard.css?v=2.1">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <div class="logo-text">Carbon<span>Lens</span></div>
+      </div>
+
+            <nav class="sidebar-nav">
+        <div class="nav-section-title">Core Intelligence</div>
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></span>
+          <span>Dashboard</span>
+        </a>
+        <a href="activities.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg></span>
+          <span>Activity Log</span>
+        </a>
+        <a href="goals.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+          <span>Carbon Budget</span>
+        </a>
+        <a href="simulator.html" class="nav-item active">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.2 18.4A2 2 0 0 0 5.8 21.6h12.4a2 2 0 0 0 1.6-3.2L14 9.31V2Z"/><line x1="8.5" x2="15.5" y1="2" y2="2"/><path d="M14 9.3h-4"/></svg></span>
+          <span>"What If?" Lab</span>
+        </a>
+
+        <div class="nav-section-title" style="margin-top: 14px;">Community & Growth</div>
+        <a href="achievements.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+          <span>Achievements</span>
+        </a>
+        <a href="leaderboard.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
+          <span>Leaderboard</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <span>Settings & Export</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-profile-summary">
+          <div class="user-avatar">U</div>
+          <div class="user-meta">
+            <div class="user-meta-name">Loading...</div>
+            <div class="user-meta-role">Sustainability Member</div>
+          </div>
+        </div>
+        <button class="btn-logout" title="Sign Out"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg></button>
+      </div>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <header class="top-navbar">
+        <div class="navbar-left">
+          <button class="mobile-nav-toggle"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
+          <h1 class="page-title">"What If?" Simulation Laboratory</h1>
+        </div>
+      </header>
+
+      <main class="content-body">
+        <!-- Quick Presets -->
+        <section style="margin-bottom: 30px;">
+          <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 14px;">⚡ High-Impact Simulation Scenarios</h3>
+          <div id="simulator-presets-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+            <p style="color:var(--text-muted);">Loading presets...</p>
+          </div>
+        </section>
+
+        <!-- Interactive Simulation Workbench -->
+        <section class="simulator-layout">
+          <!-- Left Controls Panel -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">ðŸŽ›ï¸ Simulation Controls</h3>
+              <span style="font-size: 12.5px; color: var(--text-muted);">Adjust parameters to project impact</span>
+            </div>
+
+            <div class="form-group">
+              <label for="sim_activity_type" class="form-label">Activity Category & Type</label>
+              <select id="sim_activity_type" class="form-select">
+                <option value="">Loading activities...</option>
+              </select>
+            </div>
+
+            <!-- Quantity Slider -->
+            <div class="sim-slider-group">
+              <div class="sim-slider-header">
+                <label class="form-label" style="margin-bottom: 0;">Baseline Monthly Quantity</label>
+                <span id="sim-qty-display" class="sim-slider-val">400 km / month</span>
+              </div>
+              <input type="range" id="sim_quantity" class="range-slider" min="1" max="2000" value="400" step="1">
+            </div>
+
+            <!-- Reduction % Slider -->
+            <div class="sim-slider-group">
+              <div class="sim-slider-header">
+                <label class="form-label" style="margin-bottom: 0;">Target Reduction Percentage</label>
+                <span id="sim-red-display" class="sim-slider-val">25% reduction</span>
+              </div>
+              <input type="range" id="sim_reduction_pct" class="range-slider" min="1" max="100" value="25" step="1">
+            </div>
+
+            <div style="background: var(--bg-surface-subtle); padding: 16px; border-radius: var(--radius-md); font-size: 13.5px; color: var(--text-muted); border: 1px solid var(--border-color);">
+              ðŸŒ± <strong>Verified Modeling:</strong> Calculations dynamically utilize snapshot conversion factors and extrapolate equivalent annual tree carbon absorption and avoided vehicle distances.
+            </div>
+          </div>
+
+          <!-- Right Results Panel -->
+          <div class="sim-results-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span class="badge" style="background: rgba(255, 255, 255, 0.2); color: #ffffff;">Projected Savings</span>
+              <span style="font-size: 12px; color: #d1e7dd;">EPA / DEFRA Verified</span>
+            </div>
+
+            <!-- Comparison Flow -->
+            <div class="sim-comparison-flow">
+              <div class="sim-stat-box">
+                <div class="sim-stat-lbl">Baseline</div>
+                <div id="sim-base-co2" class="sim-stat-num" style="color: #ffffff;">-- kg</div>
+              </div>
+              <div class="sim-arrow">→</div>
+              <div class="sim-stat-box">
+                <div class="sim-stat-lbl">Projected</div>
+                <div id="sim-proj-co2" class="sim-stat-num">-- kg</div>
+              </div>
+              <div class="sim-arrow">→</div>
+              <div class="sim-stat-box">
+                <div class="sim-stat-lbl">Monthly Saved</div>
+                <div id="sim-saved-monthly" class="sim-stat-num" style="color: #a7f3d0;">-- kg</div>
+              </div>
+            </div>
+
+            <!-- Annual Savings Banner -->
+            <div style="background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: var(--radius-lg); padding: 20px; text-align: center; margin-bottom: 24px;">
+              <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #d1e7dd; font-weight: 700;">Annual Carbon Avoidance</div>
+              <div id="sim-saved-annual" style="font-family: var(--font-display); font-size: 2.25rem; font-weight: 800; color: #ffffff; margin: 4px 0;">-- kg CO₂e / year</div>
+            </div>
+
+            <!-- Environmental Equivalents -->
+            <div class="sim-equivalents-grid">
+              <div class="sim-equiv-card">
+                <div class="sim-equiv-icon">ðŸŒ³</div>
+                <div>
+                  <div id="sim-trees-val" class="sim-equiv-val">-- trees</div>
+                  <div class="sim-equiv-sub">Annual absorption equiv.</div>
+                </div>
+              </div>
+              <div class="sim-equiv-card">
+                <div class="sim-equiv-icon">ðŸš—</div>
+                <div>
+                  <div id="sim-carkm-val" class="sim-equiv-val">-- km</div>
+                  <div class="sim-equiv-sub">Gasoline driving avoided</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Tip -->
+            <div style="margin-top: 22px; font-size: 13.5px; color: #d1e7dd; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px;">
+              <strong style="color: #a7f3d0;">Insight:</strong> <span id="sim-action-tip">Adjust sliders above to preview real-time climate impacts.</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/api.js?v=2.1"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/simulator.js?v=2.1"></script>
+</body>
+</html>
+
+
+

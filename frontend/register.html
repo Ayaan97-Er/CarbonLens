@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account â€” CarbonLens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css?v=2.1">
+  <link rel="stylesheet" href="css/auth.css?v=2.1">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <!-- Left Hero Sidebar -->
+    <div class="auth-sidebar-hero">
+      <div class="auth-brand">
+        <div class="auth-brand-logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+        <div class="auth-brand-name">Carbon<span>Lens</span></div>
+      </div>
+
+      <div class="auth-hero-content">
+        <h2 class="auth-hero-title">Start your journey to<br><span>Net-Zero Living.</span></h2>
+        <p class="auth-hero-desc">
+          Create your free account to begin logging carbon activities, unlocking badges, and receiving smart environmental recommendations.
+        </p>
+        <ul class="auth-features-list">
+          <li><div class="auth-feature-check">âœ“</div> 100% Free personal sustainability intelligence</li>
+          <li><div class="auth-feature-check">âœ“</div> Privacy-safe leaderboard and data sovereignty</li>
+          <li><div class="auth-feature-check">âœ“</div> Exportable personal GHG activity records</li>
+        </ul>
+      </div>
+
+      <div class="auth-quote-card">
+        <div class="auth-quote-text">
+          "Join thousands of mindful individuals taking systematic action for a greener tomorrow."
+        </div>
+        <div class="auth-quote-author">— CarbonLens Community</div>
+      </div>
+    </div>
+
+    <!-- Right Register Form Panel -->
+    <div class="auth-form-panel">
+      <div class="auth-card-inner">
+        <div class="auth-header">
+          <h1 class="auth-title">Create Account</h1>
+          <p class="auth-subtitle">Get started with your sustainability profile</p>
+        </div>
+
+        <div id="auth-alert" class="auth-alert"></div>
+
+        <form id="register-form">
+          <div class="form-group">
+            <label for="full_name" class="form-label">Full Name</label>
+            <input type="text" id="full_name" class="form-input" placeholder="Alex Morgan" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" class="form-input" placeholder="alex@example.com" required autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label for="public_handle" class="form-label">Public Handle <span style="font-weight:400; color:var(--text-muted); font-size:12px;">(optional, for leaderboard)</span></label>
+            <input type="text" id="public_handle" class="form-input" placeholder="EcoAlex" autocomplete="username">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-input" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required minlength="6" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+              <label for="confirm_password" class="form-label">Confirm Password</label>
+              <input type="password" id="confirm_password" class="form-input" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required minlength="6" autocomplete="new-password">
+            </div>
+          </div>
+
+          <button type="submit" id="btn-register-submit" class="btn btn-primary" style="width: 100%; padding: 13px; font-size: 15px; margin-top: 10px;">
+            Create Account
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          Already have an account? <a href="login.html" style="font-weight: 700;">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js?v=2.1"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      redirectIfAuth();
+      initRegisterForm();
+    });
+  </script>
+</body>
+</html>
+
+
+
