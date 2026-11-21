@@ -326,6 +326,11 @@ def seed_database():
             )
             db.add(admin_user)
             db.commit()
+        else:
+            # Ensure password hash is always valid on restart
+            admin_user.password_hash = get_password_hash(settings.ADMIN_USER_PASSWORD)
+            admin_user.is_active = True
+            db.commit()
 
         # 5. Seed Demo User
         demo_user = db.query(User).filter(User.email == settings.DEMO_USER_EMAIL).first()
@@ -340,6 +345,12 @@ def seed_database():
                 public_handle="EcoAlex",
             )
             db.add(demo_user)
+            db.commit()
+            db.refresh(demo_user)
+        else:
+            # Ensure demo password hash is always valid on restart
+            demo_user.password_hash = get_password_hash(settings.DEMO_USER_PASSWORD)
+            demo_user.is_active = True
             db.commit()
             db.refresh(demo_user)
 
